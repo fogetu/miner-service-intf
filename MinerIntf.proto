@@ -1,0 +1,8 @@
+syntax = "proto3";
+package mine_intf;
+import "MinerStruct.proto";
+// 矿机挖矿服务
+service Miner {
+    // 获取矿机列表
+    rpc getList (mine_intf.MinerListRequest) returns (mine_intf.MinerListResponse);
+}

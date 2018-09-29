@@ -1,0 +1,47 @@
+syntax = "proto3";
+package mine_intf;
+import "BaseConst.proto";
+// 矿池列表请求参数
+message MinerListRequest {
+    message filter_field {
+        string id = 1; // 矿池编号
+        int32 status = 2; // 状态(1未满，2已满，3已结束，4官方撤销，5已转移，6标记为已满，7标记为已满并结束，100已删除)
+        int32 type = 3; // 类型(1新手标，2标准矿池，3白名单限购矿池，4火币投票限购矿池，5活动赠送矿池)
+        int32 user_id = 4; // 发起人id
+        string pool_type_id = 5; // 矿池类型编号
+    }
+    int32 page = 1;
+    int32 page_size = 2;
+}
+// 矿池列表返回
+message MinerListResponse {
+    mine_intf.ErrorCode code = 1; // 响应代码
+    repeated MinerItem data = 2;
+}
+message MinerItem {
+    string id = 1; // 矿池编号
+    int32 status = 2; // 状态(1未满，2已满，3已结束，4官方撤销，5已转移，6标记为已满，7标记为已满并结束，100已删除)
+    int32 type = 3; // 类型(1新手标，2标准矿池，3白名单限购矿池，4火币投票限购矿池，5活动赠送矿池)
+    int32 user_id = 4; // 发起人id
+    string pool_type_id = 5; // 矿池类型编号
+    int32 friendly_id = 6; // app上显示的矿池编号
+    string name = 7; // 矿池名称
+    int32 class = 8; // 等级
+    string abbreviation = 9; // 矿池类型缩写
+    int32 miner_count = 10; // 矿机里含有的币的数量
+    double miner_amount = 11; // 每个矿机的价格
+    int32 amount_coin = 12; // 矿机的定价币种(1USDT,2YCC,3BTC,4ETH)
+    double miner_coin = 13; // 矿机里含有的币的数量
+    double basic_yield = 14; // 每天基础奖励
+    double presented_yield = 15; // 每天赠送奖励
+    double annual_yield = 16; // 年化收益
+    int32 sold = 17; // 已售矿机数量
+    int64 expires = 18; // 过期时间，到期时间
+    int64 exit_at = 19; // 退出时间
+    int32 duration = 20; // 矿池生命周期
+    string mining_date = 21; // 下一次的挖矿时间
+    int32 mining_left = 22; // 当天挖矿剩余次数
+    int32 mining_count = 23; // 每天可挖矿次数
+    string created_at = 24;
+    string updated_at = 25;
+}

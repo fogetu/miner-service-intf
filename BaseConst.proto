@@ -1,0 +1,18 @@
+syntax = "proto3";
+package mine_intf;
+// 错误码
+enum ErrorCode {
+    SUCCESS = 0; // 成功
+    INTERNAL_ERROR = 10001; // 系统错误 internal_error
+    PARAMS_ERROR = 10002; // 参数错误
+    REQUEST_INTERFACE_NOT_EXIST = 10004; // 数据接口不存在
+    DATA_NOT_FOUND = 10005; // 数据不存在
+    DATA_SOURCE_UNKNOWN = 10006; // 未知的数据来源类型
+}
+
+// 数据资源来源
+enum DataSource {
+    DB = 0;
+    CACHE = 1;
+    API = 2;
+}

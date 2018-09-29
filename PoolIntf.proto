@@ -1,0 +1,8 @@
+syntax = "proto3";
+package mine_intf;
+import "PoolStruct.proto";
+// 矿池服务
+service Pool {
+    // 获取矿池列表
+    rpc getList (mine_intf.PoolListRequest) returns (mine_intf.PoolListResponse);
+}
