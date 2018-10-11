@@ -19,7 +19,7 @@ message PoolListResponse {
     repeated PoolItem data = 2;
 }
 message PoolItem {
-    string auto_id = 1; // 矿池编号
+    uint32 auto_id = 1; // 矿池编号
     string id = 2; // 矿池编号
     uint32 status = 3; // 状态(1未满，2已满，3已结束，4官方撤销，5已转移，6标记为已满，7标记为已满并结束，100已删除)
     uint32 type = 4; // 类型(1新手标，2标准矿池，3白名单限购矿池，4火币投票限购矿池，5活动赠送矿池)
