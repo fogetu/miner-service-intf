@@ -25,7 +25,7 @@ message PoolItem {
     uint32 type = 4; // 类型(1新手标，2标准矿池，3白名单限购矿池，4火币投票限购矿池，5活动赠送矿池)
     uint32 user_id = 5; // 发起人id
     string pool_type_id = 6; // 矿池类型编号
-    uint32 friendly_id = 7; // app上显示的矿池编号
+    string friendly_id = 7; // app上显示的矿池编号
     string name = 8; // 矿池名称
     uint32 class = 9; // 等级
     string abbreviation = 10; // 矿池类型缩写
