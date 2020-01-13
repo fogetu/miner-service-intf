@@ -1,5 +1,4 @@
 #!/bin/sh
-
 dir=`dirname $0`
 auto_dir="$dir/mine_intf/"
 rm -rf $auto_dir
