@@ -3,12 +3,12 @@ package mine_intf;
 import "BaseConst.proto";
 // 矿池列表请求参数
 message PoolListRequest {
-    FilterField filter_field = 1;
+    PoolFilterField filter_field = 1;
     int32 page = 2;
     int32 page_size = 3;
 }
 
-message FilterField{
+message PoolFilterField{
     string id = 1; // 矿池编号
     int32 status = 2; // 状态(1未满，2已满，3已结束，4官方撤销，5已转移，6标记为已满，7标记为已满并结束，100已删除)
     int32 type = 3; // 类型(1新手标，2标准矿池，3白名单限购矿池，4火币投票限购矿池，5活动赠送矿池)
